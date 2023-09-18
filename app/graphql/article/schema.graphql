@@ -1,0 +1,28 @@
+extend type Query {
+    articleList(first: ID): [Article]
+}
+
+type Article {
+    id: ID
+    title: String
+    content: String
+    author: Author
+}
+type Author {
+    name: String
+    age: Int
+}
+
+extend type Mutation {
+    addArticle(title: String, content: String, author: AddAuthor): Article
+}
+
+input AddArticle {
+    title: String
+    content: String
+}
+
+input AddAuthor {
+    name: String
+    age: Int
+}
