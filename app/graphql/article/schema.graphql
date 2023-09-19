@@ -1,5 +1,6 @@
 extend type Query {
-    articleList(first: ID): [Article]
+    articleList: [Article]
+    getArticleById(first: ID!): [Article]
 }
 
 type Article {
